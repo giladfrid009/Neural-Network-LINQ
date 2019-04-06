@@ -13,7 +13,10 @@ namespace Neural_Network
                 var output = n.Output(new List<double> { 0.5 });
                 n.Back_Propogate(new List<double> { 0.7, 0.5, 0.3, 0.1, 0 }, 0.4, 0.9);
 
-                output.ForEach(a => Console.WriteLine(a));
+                for (int i = 0; i < output.Count; i++)
+                {
+                    Console.WriteLine(output[i]);
+                }
             }
         }
     }

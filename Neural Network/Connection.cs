@@ -21,7 +21,7 @@ namespace Neural_Network
         public void Calculate_Weight(double learning_rate, double momentum)
         {
             double old_delta = Delta_Weight;
-            Delta_Weight = Output_Neuron.Gradient * learning_rate * Output_Neuron.Value;
+            Delta_Weight = learning_rate * Output_Neuron.Gradient * Input_Neuron.Value;
             Weight += Delta_Weight + momentum * old_delta;
         }
     }

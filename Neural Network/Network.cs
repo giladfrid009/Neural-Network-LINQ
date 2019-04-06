@@ -1,4 +1,5 @@
 ﻿using Neural_Network.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -33,7 +34,7 @@ namespace Neural_Network
             return Neurons[Neurons.Count - 1].Select(a => a.Value).ToList();
         }
 
-        public void Back_Propogate(List<double> targets, double learning_rate, double momentum)
+        public void Back_Propogate(List<double> targets, double learning_rate = 0.4, double momentum = 0.9)
         {
             int i = 0;
             Neurons[Neurons.Count - 1].ForEach(a =>
