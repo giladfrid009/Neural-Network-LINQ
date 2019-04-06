@@ -52,7 +52,7 @@ namespace Neural_Network
 
         public void Calculate_Gradient(double target)
         {
-            Gradient = calculate_error(target) * sigmoid_derivative();
+            Gradient = Calculate_Error(target) * sigmoid_derivative();
         }
 
         public void Calculate_Bias(double learning_rate, double momentum)
@@ -62,7 +62,7 @@ namespace Neural_Network
             Bias += Delta_Bias + momentum * old_delta;
         }
 
-        private double calculate_error(double target)
+        public double Calculate_Error(double target)
         {
             return target - Value;
         }
